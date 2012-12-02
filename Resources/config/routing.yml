@@ -1,3 +1,0 @@
-lms_upload_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: LmsUploadBundle:Default:index }

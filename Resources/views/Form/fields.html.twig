@@ -1,3 +1,8 @@
-{% block file_widget %}
+{% block lms_file_widget %}
+	<p>{{ block('form_widget') }}</p>
 	
+	{% if image_url is not null %}
+{# 	    {% if  %}#}
+        <p><img src="{{ asset(file_path) }}" height="150" /></p>
+    {% endif %}
 {% endblock %}

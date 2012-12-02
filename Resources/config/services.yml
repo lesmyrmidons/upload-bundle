@@ -1,7 +1,0 @@
-parameters:
-#    lms_upload.example.class: Lms\Bundle\UploadBundle\Example
-
-services:
-#    lms_upload.example:
-#        class: %lms_upload.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
