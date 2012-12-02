@@ -1,1 +1,6 @@
 vendor
+
+# Folder & files IDE Eclispe
+.buildpath
+.project
+.settings/
