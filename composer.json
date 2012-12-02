@@ -1,0 +1,14 @@
+{
+    "name": "lms/upload-bundle",
+    "description": "Upload a file for symfony 2",
+    "require": {
+        "symfony/symfony": "2.1.x-dev",
+        "symfony/form": "2.*"
+    },
+    "authors": [
+        {
+            "name": "lesmyrmidons",
+            "email": "lesmyrmidons@gmail.com"
+        }
+    ]
+}
