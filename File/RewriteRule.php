@@ -11,30 +11,30 @@ class RewriteRule
      * @var string
      */
     private $pathBase;
-    
+
     /**
      *
      * @var integer
      */
     private $depth;
-    
+
     public function __construct($baseDir, $depth = 3)
     {
         $this->pathBase = $baseDir;
         $this->depth = $depth;
     }
-    
+
     /**
-     * 
+     *
      * @param integer $depth
      */
     public function setDepth($depth) {
         $this->depth = $depth;
     }
-    
+
     /**
-     * 
-     * @param unknown $filename
+     *
+     * @param string $filename
      * @param string $typeName
      * @return mixed
      */
@@ -43,13 +43,13 @@ class RewriteRule
         $path = $this->getHash($filename, '/');
         $path = empty($typeName) ? $path : $typeName . '/' . $path;
         $path = $this->pathBase . '/' . $path;
-         
+
         return str_replace(pathinfo($_SERVER['SCRIPT_FILENAME'], PATHINFO_DIRNAME), '', realpath($path));
     }
-    
+
     /**
-     * 
-     * @param unknown $filename
+     *
+     * @param string $filename
      * @param string $typeName
      * @return string
      */
@@ -60,10 +60,10 @@ class RewriteRule
 
         return realpath($this->pathBase . DIRECTORY_SEPARATOR . $path);
     }
-    
+
     /**
-     * 
-     * @param unknown $filename
+     *
+     * @param string $filename
      * @param string $typeName
      * @return string
      */
@@ -74,20 +74,22 @@ class RewriteRule
 
         return $this->pathBase . DIRECTORY_SEPARATOR . $path;
     }
-    
+
     /**
-     * 
+     *
      * @param string $file the name of the file to get Hash
+     * @param string $ds
+     *
      * @return string the hash
      */
     private function getHash($file, $ds = DIRECTORY_SEPARATOR)
     {
         $fileName = pathinfo($file, PATHINFO_FILENAME);
-    
+
         if (0 === $this->depth) {
             return $fileName;
         }
-        
+
         if (preg_match('/^(.+)([A-Za-z0-9]{1,' . $this->depth . '})$/xU', $fileName, $matches)) {
             $endFilename = $matches[2];
             if (strlen($endFilename) < $this->depth) {
@@ -96,10 +98,10 @@ class RewriteRule
                 $fileName = $startFilename . $endFilename;
             }
             $hash = join($ds, array_slice(array_reverse(str_split($fileName)), 0, 3));
-    
+
             return $hash;
         }
-        
+
         return '';
     }
 

@@ -14,7 +14,7 @@
              <argument>%upload_dir_depth%</argument>
         </service>
         <service id="lms_upload.file.rewriter" class="%lms_upload.file.rewriter.class%">
-             <argument type="service" id="tele7_core.file.rewrite_rule" />
+             <argument type="service" id="lms_upload.file.rewrite_rule" />
         </service>
     </services>
 </container>
