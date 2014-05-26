@@ -10,8 +10,8 @@
 
     <services>
         <service id="lms_upload.file.rewrite_rule" class="%lms_upload.file.rewrite_rule.class%">
-             <argument>%upload_dir%</argument>
-             <argument>%upload_dir_depth%</argument>
+             <argument>%lms_upload.dir%</argument>
+             <argument>%lms_upload.depth%</argument>
         </service>
         <service id="lms_upload.file.rewriter" class="%lms_upload.file.rewriter.class%">
              <argument type="service" id="lms_upload.file.rewrite_rule" />
