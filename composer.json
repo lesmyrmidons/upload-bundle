@@ -1,14 +1,30 @@
 {
     "name": "lms/upload-bundle",
-    "description": "Upload a file for symfony 2",
+    "description": "Upload a file to symfony 2",
+    "license": "MIT",
+    "minimum-stability": "dev",
+
     "require": {
-        "symfony/symfony": "2.1.x-dev",
-        "symfony/form": "2.*"
+        "php": ">=5.4.1",
+        "symfony/symfony": ">=2.4.*",
+        "symfony/form": "~2.3",
+        "liip/imagine-bundle": ">=0.21.*"
     },
     "authors": [
         {
             "name": "lesmyrmidons",
             "email": "lesmyrmidons@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": { "Lms\\UploadBundle": "" }
+    },
+
+    "target-dir": "Lms/UploadBundle",
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    }
 }
