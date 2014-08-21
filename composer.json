@@ -6,9 +6,9 @@
 
     "require": {
         "php": ">=5.4.1",
-        "symfony/symfony": ">=2.4.*",
+        "symfony/symfony": ">=2.4.1",
         "symfony/form": "~2.3",
-        "liip/imagine-bundle": ">=0.21.*"
+        "liip/imagine-bundle": ">=0.21.0"
     },
     "authors": [
         {
