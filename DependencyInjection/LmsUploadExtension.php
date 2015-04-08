@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Bundle\UploadBundle\DependencyInjection;
+namespace Lms\UploadBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -25,6 +25,6 @@ class LmsUploadExtension extends Extension
         $container->setParameter('lms_upload.dir', $config['dir']);
         $container->setParameter('lms_upload.depth', $config['depth']);
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('file.xml');
+        $loader->load('files.xml');
     }
 }

@@ -1,5 +1,6 @@
 <?php
-namespace Lms\Bundle\UploadBundle\File;
+namespace Lms\UploadBundle\File;
+
 /**
  * @author lesmyrmidons <lesmyrmidons@gmail.com>
  *
@@ -18,9 +19,9 @@ class RewriteRule
      */
     private $depth;
 
-    public function __construct($baseDir, $depth = 3)
+    public function __construct($baseDirectory, $depth = 3)
     {
-        $this->pathBase = $baseDir;
+        $this->pathBase = $baseDirectory;
         $this->depth = $depth;
     }
 
@@ -28,7 +29,8 @@ class RewriteRule
      *
      * @param integer $depth
      */
-    public function setDepth($depth) {
+    public function setDepth($depth)
+    {
         $this->depth = $depth;
     }
 
@@ -36,6 +38,7 @@ class RewriteRule
      *
      * @param string $filename
      * @param string $typeName
+     *
      * @return mixed
      */
     public function getBrowserPath($filename, $typeName = null)
@@ -51,6 +54,7 @@ class RewriteRule
      *
      * @param string $filename
      * @param string $typeName
+     *
      * @return string
      */
     public function getPath($filename, $typeName = null)
@@ -65,6 +69,7 @@ class RewriteRule
      *
      * @param string $filename
      * @param string $typeName
+     *
      * @return string
      */
     public function getTmpPath($filename, $typeName = null)
@@ -104,5 +109,4 @@ class RewriteRule
 
         return '';
     }
-
 }

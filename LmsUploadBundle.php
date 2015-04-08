@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Bundle\UploadBundle;
+namespace Lms\UploadBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
